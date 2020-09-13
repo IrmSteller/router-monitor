@@ -1,0 +1,12 @@
+<p>service-target-view works!</p>
+<button (click)="loadTargets()">Load</button>
+<ul>
+    <li *ngFor="let target of targets">
+        <a routerLink="detail">
+        <label>Name: {{target.name}}</label>
+        <label> Id: {{target.id}}</label>
+        <label> Verbunden: {{target.isConnected}}</label>
+    </a>
+    </li>
+</ul>
+<app-service-detail id="detail" [target]="selectedTarget"></app-service-detail>

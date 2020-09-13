@@ -1,0 +1,13 @@
+#detail{
+    background-color: brown;
+    margin: 5px;
+}
+
+label{
+    width: 30px;
+}
+
+#name{
+    width: 30px;
+    margin-right: 50px;
+}
