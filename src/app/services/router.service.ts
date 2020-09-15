@@ -2,6 +2,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ServiceTarget } from '../models/ServiceTarget';
 import { Injectable } from '@angular/core';
+import { connect } from 'net';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,6 +16,8 @@ const httpOptions = {
 
 export class RouterService {
   private routerUrl: string = 'https://localhost:5001/api/TargetService';
+  private registerUrl: string ="";
+  private connected: boolean;
   constructor(private http: HttpClient) { }
 
   getServiceTargets(): Observable<ServiceTarget[]>{
@@ -22,4 +25,8 @@ export class RouterService {
     
   }
   
+  registerClient():Observable<boolean>{
+    return this.http.post<boolean>(this.registerUrl ,{title: "hans", name: 'werner'});    
+  }
+
 }
