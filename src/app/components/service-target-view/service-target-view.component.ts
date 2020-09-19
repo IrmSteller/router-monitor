@@ -11,10 +11,17 @@ export class ServiceTargetViewComponent implements OnInit {
 
   targets = [];
   selectedTarget: ServiceTarget;
-  constructor(private routerService:RouterService ) { }
+
+  constructor(private routerService:RouterService) { 
+    
+  }
 
   ngOnInit() {
     this.getTargets();
+  }
+
+  onSubmit(target){
+    
   }
 
   loadTargets(){

@@ -1,0 +1,16 @@
+app-console{
+    background-color: gray;
+    float: left;
+    width: 200px;
+    height: 400px;
+}
+
+app-service-target-view{
+    background-color: aquamarine;
+    float: left;
+    height: 400px;
+}
+app-footer{
+    background-color: brown;
+    float: left;
+}
