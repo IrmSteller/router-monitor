@@ -2,6 +2,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ServiceTarget } from '../models/ServiceTarget';
 import { Injectable } from '@angular/core';
+import { Config } from '../models/Config';
 
 
 const httpOptions = {
@@ -16,8 +17,9 @@ const httpOptions = {
 
 export class RouterService {
   private routerUrl: string = 'https://localhost:5001/api/';
-  private registerUrl: string ="";
+  private registerUrl: string ='https://localhost:5001/api/';
   private connected: boolean;
+  private config: Config;
   constructor(private http: HttpClient) { }
 
   getServiceTargets(): Observable<ServiceTarget[]>{
@@ -25,8 +27,17 @@ export class RouterService {
     
   }
   
-  registerClient():Observable<boolean>{
-    return this.http.post<boolean>(this.registerUrl ,{title: "hans", name: 'werner'});    
+  registerClient(){
+    return this.http.post(this.registerUrl ,this.config, httpOptions).toPromise()
+    .then(data => {console.log(data)})
+    .catch(err => {console.log(err)});
+    
+  }
+
+  loadConfiguration(){
+    return this.http.get<Config>("assets/config.json").subscribe(data => {
+      this.config = data;
+    });
   }
 
 }

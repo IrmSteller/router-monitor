@@ -17,6 +17,8 @@ export class ServiceTargetViewComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.routerService.loadConfiguration();
+    this.routerService.registerClient();
     this.getTargets();
   }
 
@@ -25,7 +27,8 @@ export class ServiceTargetViewComponent implements OnInit {
   }
 
   loadTargets(){
-    this.getTargets();
+    this.routerService.registerClient();
+    //this.getTargets();
   }
 
   getTargets(){

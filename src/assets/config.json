@@ -1,0 +1,5 @@
+{
+    "name" : "service1",
+    "host" : "localhost",
+    "port" : "8002"
+}
