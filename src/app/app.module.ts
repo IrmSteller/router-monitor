@@ -8,6 +8,7 @@ import { ServiceDetailComponent } from './components/details/service-detail/serv
 import {HttpClientModule} from '@angular/common/http';
 import { ConsoleComponent } from './components/console/console.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NaviComponent } from './components/navi/navi.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ServiceTargetViewComponent,
     ServiceDetailComponent,
     ConsoleComponent,
-    FooterComponent
+    FooterComponent,
+    NaviComponent
   ],
   imports: [
     BrowserModule,
